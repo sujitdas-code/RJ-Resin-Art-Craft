@@ -18,14 +18,14 @@ const categories = [
 // Existing product names and image paths unchanged.
 
 const products = [
-  { name: "Resin Earring", category: "Earrings", image: "Earrings 1.png" },
-  { name: "Resin Earring", category: "Earrings", image: "Earrings 2.png" },
-  { name: "Resin Earring", category: "Earrings", image: "Earrings 3.png" },
-  { name: "Resin Earring", category: "Earrings", image: "Earrings 4.png" },
-  { name: "Resin Earring", category: "Earrings", image: "Earrings 5.png" },
-  { name: "Resin Earring", category: "Earrings", image: "Earrings 6.png" },
-  { name: "Resin Earring", category: "Earrings", image: "Earrings 7.png" },
-  { name: "Resin Earring", category: "Earrings", image: "Earrings 8.png" },
+  { category: "Earrings", image: "Earrings 1.png" },
+  { category: "Earrings", image: "Earrings 2.png" },
+  { category: "Earrings", image: "Earrings 3.png" },
+  { category: "Earrings", image: "Earrings 4.png" },
+  { category: "Earrings", image: "Earrings 5.png" },
+  { category: "Earrings", image: "Earrings 6.png" },
+  { category: "Earrings", image: "Earrings 7.png" },
+  { category: "Earrings", image: "Earrings 8.png" },
 
   { name: "Resin Bangle 1", category: "Bangles", image: "images/bangle1.jpg" },
   { name: "Resin Pendant 1", category: "Pendants", image: "images/pendant1.jpg" },
