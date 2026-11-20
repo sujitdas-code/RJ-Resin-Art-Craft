@@ -29,7 +29,7 @@ const prodBox = document.getElementById("products");
 const modal = document.getElementById("order-modal");
 const selectedText = document.getElementById("selected-item");
 let selectedItem = "";
-let activeCat = "Sob";
+let activeCat = "Empty";
 
 function showCategories() {
   catBox.innerHTML = "";
@@ -45,7 +45,7 @@ function showCategories() {
 function showProducts() {
   prodBox.innerHTML = "";
   products
-    .filter(function (p) { return activeCat === "Sob" || p.category === activeCat; })
+    .filter(function (p) { return activeCat === "Empty" || p.category === activeCat; })
     .forEach(function (p) {
       const card = document.createElement("div");
       card.className = "card";
