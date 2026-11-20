@@ -1,19 +1,27 @@
 const WHATSAPP_NUMBER = "918910425745";
 
 const categories = [
-  "Sob", "Earrings", "Bangles", "Pendants", "Bracelets",
-  "Photo Frames", "Wall Clocks", "Preservation"
+  "Earrings", "Bangles", "Pendants", "Bracelets",
+  "Photo Frames", "Wall Clocks", "Preservation", "3D rasin art"
 ];
 
 // Notun product jog korte ekta line copy kore naam, category ar image bodlao
 const products = [
   { name: "Resin Earring 1", category: "Earrings", image: "images/earring1.jpg" },
+  { name: "Resin Earring 2", category: "Earrings", image: "images/earring1.jpg" },
+  { name: "Resin Earring 3", category: "Earrings", image: "images/earring1.jpg" },
+  { name: "Resin Earring 4", category: "Earrings", image: "images/earring1.jpg" },
+  { name: "Resin Earring 5", category: "Earrings", image: "images/earring1.jpg" },
+  { name: "Resin Earring 6", category: "Earrings", image: "images/earring1.jpg" },
+  { name: "Resin Earring 7", category: "Earrings", image: "images/earring1.jpg" },
+  { name: "Resin Earring 8", category: "Earrings", image: "images/earring1.jpg" },
   { name: "Resin Bangle 1", category: "Bangles", image: "images/bangle1.jpg" },
   { name: "Resin Pendant 1", category: "Pendants", image: "images/pendant1.jpg" },
   { name: "Resin Bracelet 1", category: "Bracelets", image: "images/bracelet1.jpg" },
   { name: "Photo Frame 1", category: "Photo Frames", image: "images/frame1.jpg" },
   { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
-  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
+  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" },
+  { name: "3D rasin art 1", category: "3D rasin art", image: "images/preserve1.jpg" }
 ];
 
 const catBox = document.getElementById("categories");
