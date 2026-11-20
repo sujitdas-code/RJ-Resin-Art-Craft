@@ -40,7 +40,7 @@ function showCategories() {
   categories.forEach(function (c) {
     const card = document.createElement('div');
  card.className = 'cat-btn' + (c.name === activeCat ? ' active' : '');
- card.innerHTML = <img src="${c.image}" alt="${c.name}"><span>${c.name}</span>;
+ card.innerHTML = ~<img src="${c.image}" alt="${c.name}"><span>${c.name}</span>~;
  card.onclick = function() {
      activeCat = c.name;
      showCategories();
