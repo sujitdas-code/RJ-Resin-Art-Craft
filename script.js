@@ -24,11 +24,52 @@ const products = [
   { name: "Resin Earring 8", category: "Earrings", image: "Earrings 8.png" },
 
   { name: "Resin Bangle 1", category: "Bangles", image: "images/bangle1.jpg" },
+  { name: "Resin Bangle 2", category: "Bangles", image: "images/bangle1.jpg" },
+  { name: "Resin Bangle 3", category: "Bangles", image: "images/bangle1.jpg" },
+  { name: "Resin Bangle 4", category: "Bangles", image: "images/bangle1.jpg" },
+  { name: "Resin Bangle 5", category: "Bangles", image: "images/bangle1.jpg" },
+  { name: "Resin Bangle 6", category: "Bangles", image: "images/bangle1.jpg" },
+  { name: "Resin Bangle 7", category: "Bangles", image: "images/bangle1.jpg" },
+
   { name: "Resin Pendant 1", category: "Pendants", image: "images/pendant1.jpg" },
+  { name: "Resin Pendant 2", category: "Pendants", image: "images/pendant1.jpg" },
+  { name: "Resin Pendant 3", category: "Pendants", image: "images/pendant1.jpg" },
+  { name: "Resin Pendant 4", category: "Pendants", image: "images/pendant1.jpg" },
+  { name: "Resin Pendant 5", category: "Pendants", image: "images/pendant1.jpg" },
+  { name: "Resin Pendant 6", category: "Pendants", image: "images/pendant1.jpg" },
+  
   { name: "Resin Bracelet 1", category: "Bracelets", image: "images/bracelet1.jpg" },
+  { name: "Resin Bracelet 2", category: "Bracelets", image: "images/bracelet1.jpg" },
+  { name: "Resin Bracelet 3", category: "Bracelets", image: "images/bracelet1.jpg" },
+  { name: "Resin Bracelet 4", category: "Bracelets", image: "images/bracelet1.jpg" },
+  { name: "Resin Bracelet 5", category: "Bracelets", image: "images/bracelet1.jpg" },
+  { name: "Resin Bracelet 6", category: "Bracelets", image: "images/bracelet1.jpg" },
+  
   { name: "Photo Frame 1", category: "Photo Frames", image: "images/frame1.jpg" },
+  { name: "Photo Frame 2", category: "Photo Frames", image: "images/frame1.jpg" },
+  { name: "Photo Frame 3", category: "Photo Frames", image: "images/frame1.jpg" },
+  { name: "Photo Frame 4", category: "Photo Frames", image: "images/frame1.jpg" },
+  { name: "Photo Frame 5", category: "Photo Frames", image: "images/frame1.jpg" },
+  { name: "Photo Frame 6", category: "Photo Frames", image: "images/frame1.jpg" },
+  
   { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+  { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+  { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+  { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+  { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+  { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+  { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+  { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+  { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+
   { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
+  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
+  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
+  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
+  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
+  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
+  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
+  
 ];
 
 // HTML ELEMENTS
