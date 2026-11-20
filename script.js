@@ -92,7 +92,6 @@ function showProducts() {
 
     card.innerHTML =
       '<img src="' + p.image + '" alt="' + p.name + '">' +
-      '<h3>' + p.name + '</h3>';
 
     const btn = document.createElement("button");
     btn.className = "btn";
