@@ -1,17 +1,22 @@
 
 const WHATSAPP_NUMBER = "918910425745";
 
+// CATEGORY LIST
+// Image blank rakha ache, pore nijer image file name bosabe.
+
 const categories = [
-  {name: "Earrings",image: "Earrings 1.png"}, 
-  {name: "Bangles",image: "Earrings 1.png"}, 
-  {name: "Pendants",image: "Earrings 1.png"}, 
-  {name: "Bracelets",image: "Earrings 1.png"}, 
-  {name: "Photo Frames",image: "Earrings 1.png"}, 
-  {name: "Wall Clocks",image: "Earrings 1.png"}, 
-  {name: "Preservation",image: "Earrings 1.png"}, 
+  { name: "Earrings", image: "" },
+  { name: "Bangles", image: "" },
+  { name: "Pendants", image: "" },
+  { name: "Bracelets", image: "" },
+  { name: "Photo Frames", image: "" },
+  { name: "Wall Clocks", image: "" },
+  { name: "Preservation", image: "" },
 ];
 
-// Notun product jog korte ekta line copy kore naam, category ar image bodlao
+// PRODUCTS
+// Existing product names and image paths unchanged.
+
 const products = [
   { name: "Resin Earring 1", category: "Earrings", image: "Earrings 1.png" },
   { name: "Resin Earring 2", category: "Earrings", image: "Earrings 2.png" },
@@ -21,6 +26,7 @@ const products = [
   { name: "Resin Earring 6", category: "Earrings", image: "Earrings 6.png" },
   { name: "Resin Earring 7", category: "Earrings", image: "Earrings 7.png" },
   { name: "Resin Earring 8", category: "Earrings", image: "Earrings 8.png" },
+
   { name: "Resin Bangle 1", category: "Bangles", image: "images/bangle1.jpg" },
   { name: "Resin Pendant 1", category: "Pendants", image: "images/pendant1.jpg" },
   { name: "Resin Bracelet 1", category: "Bracelets", image: "images/bracelet1.jpg" },
@@ -37,20 +43,29 @@ const selectedText = document.getElementById("selected-item");
 let selectedItem = "";
 let activeCat = null;
 
+// SHOW ALL CATEGORIES
 function showCategories() {
   catBox.innerHTML = "";
 
   categories.forEach(function (c) {
-    const card = document.createElement('div');
-    card.className = 'cat-btn' + (c.name === activeCat ? ' active' : '');
+    const card = document.createElement("div");
 
-    // FIX 1: Backtick corrected
-    card.innerHTML = `
-      <img src="${c.image}" alt="${c.name}">
-      <span>${c.name}</span>
-    `;
+    card.className = "cat-btn";
 
-    card.onclick = function() {
+    const img = document.createElement("img");
+
+    // Blank image hole broken image show korbe na
+    if (c.image) {
+      img.src = c.image;
+      img.alt = c.name;
+      card.appendChild(img);
+    }
+
+    const title = document.createElement("span");
+    title.textContent = c.name;
+    card.appendChild(title);
+
+    card.onclick = function () {
       activeCat = c.name;
       showCategories();
       showProducts();
@@ -60,41 +75,46 @@ function showCategories() {
   });
 }
 
+// SHOW SELECTED CATEGORY PRODUCTS
 function showProducts() {
   prodBox.innerHTML = "";
 
-  // FIX 2: Homepage-e products dekhabe na
+  // Homepage-e kono product dekhabe na
   if (!activeCat) return;
 
-  products
-    .filter(function (p) {
-      // FIX 3: Only selected category products
-      return p.category === activeCat;
-    })
-    .forEach(function (p) {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = '<img src="' + p.image + '" alt="' + p.name + '"><h3>' + p.name + '</h3>';
+  const filteredProducts = products.filter(function (p) {
+    return p.category === activeCat;
+  });
 
-      const btn = document.createElement("button");
-      btn.className = "btn";
-      btn.textContent = "Order / Interest";
+  filteredProducts.forEach(function (p) {
+    const card = document.createElement("div");
+    card.className = "card";
 
-      btn.onclick = function () {
-        selectedItem = p.name;
-        selectedText.textContent = "Product: " + p.name;
-        modal.classList.remove("hidden");
-      };
+    card.innerHTML =
+      '<img src="' + p.image + '" alt="' + p.name + '">' +
+      '<h3>' + p.name + '</h3>';
 
-      card.appendChild(btn);
-      prodBox.appendChild(card);
-    });
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.textContent = "Order / Interest";
+
+    btn.onclick = function () {
+      selectedItem = p.name;
+      selectedText.textContent = "Product: " + p.name;
+      modal.classList.remove("hidden");
+    };
+
+    card.appendChild(btn);
+    prodBox.appendChild(card);
+  });
 }
 
+// CLOSE MODAL
 document.getElementById("close-modal").onclick = function () {
   modal.classList.add("hidden");
 };
 
+// SEND WHATSAPP ORDER
 document.getElementById("send-order").onclick = function () {
   const name = document.getElementById("cust-name").value.trim();
   const phone = document.getElementById("cust-phone").value.trim();
@@ -105,11 +125,21 @@ document.getElementById("send-order").onclick = function () {
     return;
   }
 
-  const msg = "Notun order!\nProduct: " + selectedItem + "\nNaam: " + name + "\nPhone: " + phone + "\nNote: " + note;
+  const msg =
+    "Notun order!\nProduct: " + selectedItem +
+    "\nNaam: " + name +
+    "\nPhone: " + phone +
+    "\nNote: " + note;
 
-  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
+  window.open(
+    "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+
   modal.classList.add("hidden");
 };
 
+// INITIAL PAGE
 showCategories();
 showProducts();
