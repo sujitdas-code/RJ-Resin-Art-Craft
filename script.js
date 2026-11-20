@@ -43,8 +43,8 @@ function showCategories() {
   categories.forEach(function (c) {
     const b = document.createElement("button");
     b.className = "cat-btn" + (c === activeCat ? " active" : "");
-    b.textContent = c;
-    b.onclick = function () { activeCat = c; showCategories(); showProducts(); };
+    b.textContent = c.name;
+    b.onclick = function () { activeCat = c.name; showCategories(); showProducts(); };
     catBox.appendChild(b);
   });
 }
