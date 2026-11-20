@@ -56,12 +56,12 @@ const products = [
   { name: "Wall Clock 1", category: "Wall Clocks", image: "Wall clock 7.jfif" },
   { name: "Wall Clock 1", category: "Wall Clocks", image: "Wall clock 8.webp" },
   { name: "Wall Clock 1", category: "Wall Clocks", image: "Wall clock 9.jfif" },
-  { name: "Flower Preservation 1", category: "Preservation", image: "Preservation 1.webp" }
-  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 2.jfif" }
-  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 3.jfif" }
-  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 4.jfif" }
-  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 5.jfif" }
-  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 6.webp" }
+  { name: "Flower Preservation 1", category: "Preservation", image: "Preservation 1.webp" },
+  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 2.jfif" },
+  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 3.jfif" },
+  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 4.jfif" },
+  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 5.jfif" },
+  { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 6.webp" },
   { name: "Flower Preservation 1", category: "Preservation", image: "Preservations 7.jpg" }
 ];
 
