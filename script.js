@@ -2,15 +2,12 @@ const WHATSAPP_NUMBER = "918910425745";
 
 const categories = [
   {name: "Earrings",image: "Earrings 1.png"}, 
-  {name: "Earrings",image: "Earrings 1.png"}, 
-  {name: "Earrings",image: "Earrings 1.png"}, 
-  {name: "Earrings",image: "Earrings 1.png"}, 
-  {name: "Earrings",image: "Earrings 1.png"}, 
-  {name: "Earrings",image: "Earrings 1.png"}, 
-  {name: "Earrings",image: "Earrings 1.png"}, 
-  
-  "Bangles", "Pendants", "Bracelets",
-  "Photo Frames", "Wall Clocks", "Preservation",
+  {name: "Bangles",image: "Earrings 1.png"}, 
+  {name: "Pendants",image: "Earrings 1.png"}, 
+  {name: "Bracelets",image: "Earrings 1.png"}, 
+  {name: "Photo Frames",image: "Earrings 1.png"}, 
+  {name: "Wall Clocks",image: "Earrings 1.png"}, 
+  {name: "Preservation",image: "Earrings 1.png"}, 
 ];
 
 // Notun product jog korte ekta line copy kore naam, category ar image bodlao
@@ -41,11 +38,15 @@ let activeCat = "Empty";
 function showCategories() {
   catBox.innerHTML = "";
   categories.forEach(function (c) {
-    const b = document.createElement("button");
-    b.className = "cat-btn" + (c === activeCat ? " active" : "");
-    b.textContent = c.name;
-    b.onclick = function () { activeCat = c.name; showCategories(); showProducts(); };
-    catBox.appendChild(b);
+    const card = document.createElement('div');
+ card.className = 'cat-btn' + (c.name === activeCat ? ' active' : '');
+ card.innerHTML = <img src="${c.image}" alt="${c.name}"><span>${c.name}</span>;
+ card.onclick = function() {
+     activeCat = c.name;
+     showCategories();
+     showProducts();
+ };
+ catBox.appendChild(card);
   });
 }
 
