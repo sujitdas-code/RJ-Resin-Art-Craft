@@ -151,14 +151,14 @@ document.getElementById("send-order").onclick = function () {
   const note = document.getElementById("cust-note").value.trim();
 
   if (!name || !phone) {
-    alert("Naam ar phone number dao");
+    alert("Share your details");
     return;
   }
 
   const msg =
-    "Notun order!" +
+    "New order!" +
     "\nProduct: " + selectedItem +
-    "\nNaam: " + name +
+    "\nName: " + name +
     "\nPhone: " + phone +
     "\nNote: " + note;
 
