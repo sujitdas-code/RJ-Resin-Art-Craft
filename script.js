@@ -1,0 +1,73 @@
+const WHATSAPP_NUMBER = "918910425745";
+
+const categories = [
+  "Sob", "Earrings", "Bangles", "Pendants", "Bracelets",
+  "Photo Frames", "Wall Clocks", "Preservation"
+];
+
+// Notun product jog korte ekta line copy kore naam, category ar image bodlao
+const products = [
+  { name: "Resin Earring 1", category: "Earrings", image: "images/earring1.jpg" },
+  { name: "Resin Bangle 1", category: "Bangles", image: "images/bangle1.jpg" },
+  { name: "Resin Pendant 1", category: "Pendants", image: "images/pendant1.jpg" },
+  { name: "Resin Bracelet 1", category: "Bracelets", image: "images/bracelet1.jpg" },
+  { name: "Photo Frame 1", category: "Photo Frames", image: "images/frame1.jpg" },
+  { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
+  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
+];
+
+const catBox = document.getElementById("categories");
+const prodBox = document.getElementById("products");
+const modal = document.getElementById("order-modal");
+const selectedText = document.getElementById("selected-item");
+let selectedItem = "";
+let activeCat = "Sob";
+
+function showCategories() {
+  catBox.innerHTML = "";
+  categories.forEach(function (c) {
+    const b = document.createElement("button");
+    b.className = "cat-btn" + (c === activeCat ? " active" : "");
+    b.textContent = c;
+    b.onclick = function () { activeCat = c; showCategories(); showProducts(); };
+    catBox.appendChild(b);
+  });
+}
+
+function showProducts() {
+  prodBox.innerHTML = "";
+  products
+    .filter(function (p) { return activeCat === "Sob" || p.category === activeCat; })
+    .forEach(function (p) {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = '<img src="' + p.image + '" alt="' + p.name + '"><h3>' + p.name + '</h3>';
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = "Order / Interest";
+      btn.onclick = function () {
+        selectedItem = p.name;
+        selectedText.textContent = "Product: " + p.name;
+        modal.classList.remove("hidden");
+      };
+      card.appendChild(btn);
+      prodBox.appendChild(card);
+    });
+}
+
+document.getElementById("close-modal").onclick = function () {
+  modal.classList.add("hidden");
+};
+
+document.getElementById("send-order").onclick = function () {
+  const name = document.getElementById("cust-name").value.trim();
+  const phone = document.getElementById("cust-phone").value.trim();
+  const note = document.getElementById("cust-note").value.trim();
+  if (!name || !phone) { alert("Naam ar phone number dao"); return; }
+  const msg = "Notun order!\nProduct: " + selectedItem + "\nNaam: " + name + "\nPhone: " + phone + "\nNote: " + note;
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
+  modal.classList.add("hidden");
+};
+
+showCategories();
+showProducts();
