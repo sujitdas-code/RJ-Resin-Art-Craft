@@ -6,26 +6,26 @@ const WHATSAPP_NUMBER = "918910425745";
 
 const categories = [
   { name: "Earrings", image: "Earrings 1.png" },
-  { name: "Bangles", image: "" },
-  { name: "Pendants", image: "" },
-  { name: "Bracelets", image: "" },
-  { name: "Photo Frames", image: "" },
-  { name: "Wall Clocks", image: "" },
-  { name: "Preservation", image: "" },
+  { name: "Bangles", image: "Bangles 1.png" },
+  { name: "Pendants", image: "Pendants 1.webp" },
+  { name: "Bracelets", image: "Bracelet 1.jpg" },
+  { name: "Photo Frames", image: "Photo frame 1.jpg" },
+  { name: "Wall Clocks", image: "Wall clock 1.jfif" },
+  { name: "Preservation", image: "Preservation 1.webp" },
 ];
 
 // PRODUCTS
 // Existing product names and image paths unchanged.
 
 const products = [
-  { name: "Resin Earring 1", category: "Earrings", image: "Earrings 1.png" },
-  { name: "Resin Earring 2", category: "Earrings", image: "Earrings 2.png" },
-  { name: "Resin Earring 3", category: "Earrings", image: "Earrings 3.png" },
-  { name: "Resin Earring 4", category: "Earrings", image: "Earrings 4.png" },
-  { name: "Resin Earring 5", category: "Earrings", image: "Earrings 5.png" },
-  { name: "Resin Earring 6", category: "Earrings", image: "Earrings 6.png" },
-  { name: "Resin Earring 7", category: "Earrings", image: "Earrings 7.png" },
-  { name: "Resin Earring 8", category: "Earrings", image: "Earrings 8.png" },
+  { name: "Resin Earring", category: "Earrings", image: "Earrings 1.png" },
+  { name: "Resin Earring", category: "Earrings", image: "Earrings 2.png" },
+  { name: "Resin Earring", category: "Earrings", image: "Earrings 3.png" },
+  { name: "Resin Earring", category: "Earrings", image: "Earrings 4.png" },
+  { name: "Resin Earring", category: "Earrings", image: "Earrings 5.png" },
+  { name: "Resin Earring", category: "Earrings", image: "Earrings 6.png" },
+  { name: "Resin Earring", category: "Earrings", image: "Earrings 7.png" },
+  { name: "Resin Earring", category: "Earrings", image: "Earrings 8.png" },
 
   { name: "Resin Bangle 1", category: "Bangles", image: "images/bangle1.jpg" },
   { name: "Resin Pendant 1", category: "Pendants", image: "images/pendant1.jpg" },
