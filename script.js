@@ -2,39 +2,36 @@
 const WHATSAPP_NUMBER = "918910425745";
 
 // CATEGORY LIST
-// Image blank rakha ache, pore nijer image file name bosabe.
-
 const categories = [
-  { name: "Earrings", image: "Earrings 1.png" },
-  { name: "Bangles", image: "Bangles 1.png" },
-  { name: "Pendants", image: "Pendants 1.webp" },
-  { name: "Bracelets", image: "Bracelet 1.jpg" },
-  { name: "Photo Frames", image: "Photo frame 1.jpg" },
-  { name: "Wall Clocks", image: "Wall clock 1.jfif" },
-  { name: "Preservation", image: "Preservation 1.webp" },
+  { name: "Earrings", image: "" },
+  { name: "Bangles", image: "" },
+  { name: "Pendants", image: "" },
+  { name: "Bracelets", image: "" },
+  { name: "Photo Frames", image: "" },
+  { name: "Wall Clocks", image: "" },
+  { name: "Preservation", image: "" }
 ];
 
 // PRODUCTS
-// Existing product names and image paths unchanged.
-
 const products = [
-  { category: "Earrings", image: "Earrings 1.png" },
-  { category: "Earrings", image: "Earrings 2.png" },
-  { category: "Earrings", image: "Earrings 3.png" },
-  { category: "Earrings", image: "Earrings 4.png" },
-  { category: "Earrings", image: "Earrings 5.png" },
-  { category: "Earrings", image: "Earrings 6.png" },
-  { category: "Earrings", image: "Earrings 7.png" },
-  { category: "Earrings", image: "Earrings 8.png" },
+  { name: "Resin Earring 1", category: "Earrings", image: "Earrings 1.png" },
+  { name: "Resin Earring 2", category: "Earrings", image: "Earrings 2.png" },
+  { name: "Resin Earring 3", category: "Earrings", image: "Earrings 3.png" },
+  { name: "Resin Earring 4", category: "Earrings", image: "Earrings 4.png" },
+  { name: "Resin Earring 5", category: "Earrings", image: "Earrings 5.png" },
+  { name: "Resin Earring 6", category: "Earrings", image: "Earrings 6.png" },
+  { name: "Resin Earring 7", category: "Earrings", image: "Earrings 7.png" },
+  { name: "Resin Earring 8", category: "Earrings", image: "Earrings 8.png" },
 
   { name: "Resin Bangle 1", category: "Bangles", image: "images/bangle1.jpg" },
   { name: "Resin Pendant 1", category: "Pendants", image: "images/pendant1.jpg" },
   { name: "Resin Bracelet 1", category: "Bracelets", image: "images/bracelet1.jpg" },
   { name: "Photo Frame 1", category: "Photo Frames", image: "images/frame1.jpg" },
   { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
-  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" },
+  { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" }
 ];
 
+// HTML ELEMENTS
 const catBox = document.getElementById("categories");
 const prodBox = document.getElementById("products");
 const modal = document.getElementById("order-modal");
@@ -43,19 +40,16 @@ const selectedText = document.getElementById("selected-item");
 let selectedItem = "";
 let activeCat = null;
 
-// SHOW ALL CATEGORIES
+// SHOW CATEGORIES
 function showCategories() {
   catBox.innerHTML = "";
 
   categories.forEach(function (c) {
     const card = document.createElement("div");
-
     card.className = "cat-btn";
 
-    const img = document.createElement("img");
-
-    // Blank image hole broken image show korbe na
     if (c.image) {
+      const img = document.createElement("img");
       img.src = c.image;
       img.alt = c.name;
       card.appendChild(img);
@@ -79,7 +73,6 @@ function showCategories() {
 function showProducts() {
   prodBox.innerHTML = "";
 
-  // Homepage-e kono product dekhabe na
   if (!activeCat) return;
 
   const filteredProducts = products.filter(function (p) {
@@ -90,16 +83,20 @@ function showProducts() {
     const card = document.createElement("div");
     card.className = "card";
 
-    card.innerHTML =
-      '<img src="' + p.image + '" alt="' + p.name + '">' +
+    // Only image, no product name
+    const img = document.createElement("img");
+    img.src = p.image;
+    img.alt = "Product image";
+    card.appendChild(img);
 
+    // Order button
     const btn = document.createElement("button");
     btn.className = "btn";
     btn.textContent = "Order / Interest";
 
     btn.onclick = function () {
       selectedItem = p.name;
-      selectedText.textContent = "Product: " + p.name;
+      selectedText.textContent = "Product selected";
       modal.classList.remove("hidden");
     };
 
@@ -125,7 +122,8 @@ document.getElementById("send-order").onclick = function () {
   }
 
   const msg =
-    "Notun order!\nProduct: " + selectedItem +
+    "Notun order!" +
+    "\nProduct: " + selectedItem +
     "\nNaam: " + name +
     "\nPhone: " + phone +
     "\nNote: " + note;
