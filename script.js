@@ -1,8 +1,16 @@
 const WHATSAPP_NUMBER = "918910425745";
 
 const categories = [
-  "Earrings", "Bangles", "Pendants", "Bracelets",
-  "Photo Frames", "Wall Clocks", "Preservation", "3D rasin art"
+  {name: "Earrings",image: "Earrings 1.png"}, 
+  {name: "Earrings",image: "Earrings 1.png"}, 
+  {name: "Earrings",image: "Earrings 1.png"}, 
+  {name: "Earrings",image: "Earrings 1.png"}, 
+  {name: "Earrings",image: "Earrings 1.png"}, 
+  {name: "Earrings",image: "Earrings 1.png"}, 
+  {name: "Earrings",image: "Earrings 1.png"}, 
+  
+  "Bangles", "Pendants", "Bracelets",
+  "Photo Frames", "Wall Clocks", "Preservation",
 ];
 
 // Notun product jog korte ekta line copy kore naam, category ar image bodlao
@@ -21,7 +29,6 @@ const products = [
   { name: "Photo Frame 1", category: "Photo Frames", image: "images/frame1.jpg" },
   { name: "Wall Clock 1", category: "Wall Clocks", image: "images/clock1.jpg" },
   { name: "Flower Preservation 1", category: "Preservation", image: "images/preserve1.jpg" },
-  { name: "3D rasin art 1", category: "3D rasin art", image: "images/preserve1.jpg" }
 ];
 
 const catBox = document.getElementById("categories");
@@ -45,7 +52,7 @@ function showCategories() {
 function showProducts() {
   prodBox.innerHTML = "";
   products
-    .filter(function (p) { return activeCat === "Empty" || p.category === activeCat; })
+    .filter(function (p) { return activeCat !== "Empty" || p.category === activeCat; })
     .forEach(function (p) {
       const card = document.createElement("div");
       card.className = "card";
