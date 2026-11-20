@@ -3,13 +3,13 @@ const WHATSAPP_NUMBER = "918910425745";
 
 // CATEGORY LIST
 const categories = [
-  { name: "Earrings", image: "" },
-  { name: "Bangles", image: "" },
-  { name: "Pendants", image: "" },
-  { name: "Bracelets", image: "" },
-  { name: "Photo Frames", image: "" },
-  { name: "Wall Clocks", image: "" },
-  { name: "Preservation", image: "" }
+  { name: "Earrings", image: "Earrings 1.png" },
+  { name: "Bangles", image: "Bangles 1.png" },
+  { name: "Pendants", image: "Pendants 1.webp" },
+  { name: "Bracelets", image: "Bracelet 1.jpg" },
+  { name: "Photo Frames", image: "Photo frame 1.jpg" },
+  { name: "Wall Clocks", image: "Wall clock 1.jfif" },
+  { name: "Preservation", image: "Preservation 1.webp" }
 ];
 
 // PRODUCTS
