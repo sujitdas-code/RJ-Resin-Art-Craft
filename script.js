@@ -1,3 +1,4 @@
+
 const WHATSAPP_NUMBER = "918910425745";
 
 const categories = [
@@ -32,40 +33,59 @@ const catBox = document.getElementById("categories");
 const prodBox = document.getElementById("products");
 const modal = document.getElementById("order-modal");
 const selectedText = document.getElementById("selected-item");
+
 let selectedItem = "";
-let activeCat = "Empty";
+let activeCat = null;
 
 function showCategories() {
   catBox.innerHTML = "";
+
   categories.forEach(function (c) {
     const card = document.createElement('div');
- card.className = 'cat-btn' + (c.name === activeCat ? ' active' : '');
- card.innerHTML = ~<img src="${c.image}" alt="${c.name}"><span>${c.name}</span>~;
- card.onclick = function() {
-     activeCat = c.name;
-     showCategories();
-     showProducts();
- };
- catBox.appendChild(card);
+    card.className = 'cat-btn' + (c.name === activeCat ? ' active' : '');
+
+    // FIX 1: Backtick corrected
+    card.innerHTML = `
+      <img src="${c.image}" alt="${c.name}">
+      <span>${c.name}</span>
+    `;
+
+    card.onclick = function() {
+      activeCat = c.name;
+      showCategories();
+      showProducts();
+    };
+
+    catBox.appendChild(card);
   });
 }
 
 function showProducts() {
   prodBox.innerHTML = "";
+
+  // FIX 2: Homepage-e products dekhabe na
+  if (!activeCat) return;
+
   products
-    .filter(function (p) { return activeCat !== "Empty" || p.category === activeCat; })
+    .filter(function (p) {
+      // FIX 3: Only selected category products
+      return p.category === activeCat;
+    })
     .forEach(function (p) {
       const card = document.createElement("div");
       card.className = "card";
       card.innerHTML = '<img src="' + p.image + '" alt="' + p.name + '"><h3>' + p.name + '</h3>';
+
       const btn = document.createElement("button");
       btn.className = "btn";
       btn.textContent = "Order / Interest";
+
       btn.onclick = function () {
         selectedItem = p.name;
         selectedText.textContent = "Product: " + p.name;
         modal.classList.remove("hidden");
       };
+
       card.appendChild(btn);
       prodBox.appendChild(card);
     });
@@ -79,8 +99,14 @@ document.getElementById("send-order").onclick = function () {
   const name = document.getElementById("cust-name").value.trim();
   const phone = document.getElementById("cust-phone").value.trim();
   const note = document.getElementById("cust-note").value.trim();
-  if (!name || !phone) { alert("Naam ar phone number dao"); return; }
+
+  if (!name || !phone) {
+    alert("Naam ar phone number dao");
+    return;
+  }
+
   const msg = "Notun order!\nProduct: " + selectedItem + "\nNaam: " + name + "\nPhone: " + phone + "\nNote: " + note;
+
   window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
   modal.classList.add("hidden");
 };
