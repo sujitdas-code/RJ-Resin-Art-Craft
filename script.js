@@ -5,7 +5,7 @@ const WHATSAPP_NUMBER = "918910425745";
 // Image blank rakha ache, pore nijer image file name bosabe.
 
 const categories = [
-  { name: "Earrings", image: "" },
+  { name: "Earrings", image: "Earrings 1.png" },
   { name: "Bangles", image: "" },
   { name: "Pendants", image: "" },
   { name: "Bracelets", image: "" },
