@@ -22,7 +22,7 @@ const products = [
   { name: "Resin Earring 6", category: "Earrings", image: "Earrings 6.png" },
   { name: "Resin Earring 7", category: "Earrings", image: "Earrings 7.png" },
   { name: "Resin Earring 8", category: "Earrings", image: "Earrings 8.png" },
-  { name: "Resin Bangle 1", category: "Bangles", image: "Resin Bangles/Bangles 1.png" },
+  { name: "Resin Bangle 1", category: "Bangles", image: "ResinBangles/Bangles 1.png" },
   { name: "Resin Bangle 2", category: "Bangles", image: "Bangles 2.avif" },
   { name: "Resin Bangle 3", category: "Bangles", image: "Bangles 3.jfif" },
   { name: "Resin Bangle 4", category: "Bangles", image: "Bangles 4.jpg" },
